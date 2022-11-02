@@ -1,6 +1,7 @@
 const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
+  pathPrefix: "/TIL",
   siteMetadata: metaConfig,
   plugins: [
     {
