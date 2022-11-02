@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Bee starter]]></title><description><![CDATA[Blog posted about ...]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Nov 2022 13:13:24 GMT</lastBuildDate><item><title><![CDATA[Quick Start]]></title><description><![CDATA[Getting Started 😎 1. Create a Gatsby site. If you are not using , following Gatsby Getting Started 2. Start developing. 3. Add your content…]]></description><link>https://guest-01.github.io/TIL/development/quick_start/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/quick_start/</guid><pubDate>Sun, 05 Jul 2020 17:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;getting-started-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#getting-started-&quot; aria-label=&quot;getting started  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting Started 😎&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Nov 2022 13:52:54 GMT</lastBuildDate><item><title><![CDATA[Arachni로 웹 취약점 개선하기]]></title><description><![CDATA[TL;DR 오늘은 저희 회사의 보안 솔루션에 웹 취약점이 발견되어 고쳐보았습니다. 설치 진단은 무료 오픈소스 웹 취약점 스캐너인 arachni를 사용하였습니다. 참고로 현재(2022.10월) arachni 홈페이지를 방문해보면 “obsolescence…]]></description><link>https://guest-01.github.io/TIL/TIL/web-security-with-arahcni/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/TIL/web-security-with-arahcni/</guid><pubDate>Mon, 31 Oct 2022 22:24:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;tldr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tldr&quot; aria-label=&quot;tldr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;오늘은 저희 회사의 보안 솔루션에 웹 취약점이 발견되어 고쳐보았습니다.&lt;/p&gt;
+&lt;h3 id=&quot;설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%84%A4%EC%B9%98&quot; aria-label=&quot;설치 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;설치&lt;/h3&gt;
+&lt;p&gt;진단은 무료 오픈소스 웹 취약점 스캐너인 &lt;strong&gt;arachni&lt;/strong&gt;를 사용하였습니다. 참고로 현재(2022.10월) arachni 홈페이지를 방문해보면 “obsolescence”(노후화)되어가고 있다며 후계자인 &lt;strong&gt;Ecsypno SCNR&lt;/strong&gt;를 사용해보라는 문구가 나오네요.&lt;/p&gt;
+&lt;p&gt;arachni를 사용하는 방법은 먼저 홈페이지에서 OS별 패키지를 다운받아 설치해야 합니다. 다만 제가 사용해본 바, 되도록이면 Linux 환경에서 설치하고 사용하는 것이 수월합니다. 특히 Windows PC라면 WSL2를 이용해서 리눅스 환경을 갖춘 후 설치하는 것이 쉽습니다.&lt;/p&gt;
+&lt;p&gt;저는 Windows PC의 WSL2 - Ubuntu 환경에서 진행했습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ wget https://github.com/Arachni/arachni/releases/download/v1.6.1.3/arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;wget&lt;/code&gt;을 통해 &lt;code class=&quot;language-text&quot;&gt;tar.gz&lt;/code&gt;파일을 다운 받습니다. (홈페이지에서 클릭한 것과 동일)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ tar -zxvf arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;tar&lt;/code&gt; 명령어를 통해 타르볼 압축을 풀어줍니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ ./arachni-1.6.1.3-0.6.1.1/bin/arachni_web&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;압축이 풀린 경로에 &lt;code class=&quot;language-text&quot;&gt;/bin/arachni_web&lt;/code&gt;을 실행시켜줍니다.&lt;/p&gt;
+&lt;p&gt;이렇게 실행하면 arachni의 Web 인터페이스가 동작하고 아래와 같은 출력이 나옵니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;Puma starting in single mode...
+* Puma version: 5.6.4 (ruby 2.7.5-p203) (&amp;quot;Birdie&amp;#39;s Version&amp;quot;)
+*  Min threads: 0
+*  Max threads: 5
+*  Environment: development
+*          PID: 899
+* Listening on http://127.0.0.1:9292
+* Listening on http://[::1]:9292
+Use Ctrl-C to stop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 위의 URL로 접속해보면 로그인 페이지가 나옵니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA6klEQVQoz6WS2W7DIBBF+VQvqWzJv9ynpk7cNlSxDYNZb4EkjfvSSDHS0Rkuw/IAa9sWTdOg6zqkuq4qVGX5L+WKoijwstuhrutcs9MSwHVA8il6II+jdL8MFE0XH+Lau/T4WoBvg7jv7lvN9Cygphk0ThmZmERkzqZZXOcXxDVTYo2ESpkksL7vobWBdx7OuWzvH+Nufe7vnL1+jtifFfajwtuZ0E8aH9JgEA+Qd1L/MWZcWTCpPZQNIONh0i0hPE2IMEELdDxosS6HeWQ/ByMpV8H2wYgUrLWbMcZkM845ZHzlVkT6PkrhBwb86x6+u5JvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;arachni login&quot;
+        title=&quot;arachni login&quot;
+        src=&quot;/TIL/static/9ea3065b5a641516c50e02a3db3a2292/c1b63/arachni-login.png&quot;
+        srcset=&quot;/TIL/static/9ea3065b5a641516c50e02a3db3a2292/5a46d/arachni-login.png 300w,
+/TIL/static/9ea3065b5a641516c50e02a3db3a2292/0a47e/arachni-login.png 600w,
+/TIL/static/9ea3065b5a641516c50e02a3db3a2292/c1b63/arachni-login.png 1200w,
+/TIL/static/9ea3065b5a641516c50e02a3db3a2292/0d98f/arachni-login.png 1276w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;초기 계정은 &lt;code class=&quot;language-text&quot;&gt;README&lt;/code&gt;에 적혀있으니 확인합니다.&lt;/strong&gt; 초기 계정으로 접속하면 대시보드 화면이 나오고 상단바에 “Scans”라는 메뉴가 가장 첫번째로 보일 것입니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAByElEQVQoz5WSu3LTUBCG9UDUPAJ9Cjo6hhkbZYyx3eUV0vIelNQ8ANAyyTjGYEnW/UjnSMeypZ/dtZTYpmCimW/2ovX631058/kcH2czYbFYYDqd4tWbEV5cvcXL1+/wgWLOTSYTuNfXcF1XeM+MRxjPbjD79AWj288YuxM42R5Qh3N++AW+PiT4FhiEdYtkhyMNEBExUbQ9VJ9XFQpbS+x4foD75RKrX2tsfB/L1Qqb32tEvodg8wcPlP95d48gjGB3DXRtYewOtmnQHA5Ei4YaCRQ7VWWg8hxlUaAglFJHS2RZJvksTSVvtO7rFCpSha77B6eua2guJIqyFH9o2nLRMx8nJ3We5yGkkdIkQRSG2G63gtZGlPCfPmEv4nMcVhMEWxkvViVUqWGMhjYGJSku6D1b8WXc8nE1wyQD0jCl/XieL4oiUphSY0PNamthe7hwsKeKL9Uf+ChZmsD3NvDpwqyibVuho/2J3z35/IP/7jDVNdZRfjwMj0XIOLl6HEv1Yzf0qXQXh+L4FGedaHxfhbS7EhWNyo3NiRW/tzzikGP2+/1ZU1HIxSFdNo5junKKOImRxInEkqMds+Wlnzbjb5IVXzb8C/ZKf+F5wZsdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;arachni dashboard&quot;
+        title=&quot;arachni dashboard&quot;
+        src=&quot;/TIL/static/2f5f1e7486d0fa7cd9ae73bb41cff79b/c1b63/arachni-dashboard.png&quot;
+        srcset=&quot;/TIL/static/2f5f1e7486d0fa7cd9ae73bb41cff79b/5a46d/arachni-dashboard.png 300w,
+/TIL/static/2f5f1e7486d0fa7cd9ae73bb41cff79b/0a47e/arachni-dashboard.png 600w,
+/TIL/static/2f5f1e7486d0fa7cd9ae73bb41cff79b/c1b63/arachni-dashboard.png 1200w,
+/TIL/static/2f5f1e7486d0fa7cd9ae73bb41cff79b/7a4b2/arachni-dashboard.png 1240w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;+ New&lt;/code&gt;를 눌러서 새로운 스캔을 시작합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABOUlEQVQoz52QV27CQBCG966kYGEMfo2UOyQvOUwecotcgWID3rhv8f6ZWYo2DhISK32eoin/WCyXSyTJAsligTRNEc/nmM1ixHHs/SRJjj4xjSJExPTE89MDotd3zD++MHl5w/RxAvEzAKU7QX5hgLx3yLoBucf5+GiBLbHXAPd5lIFsapTa+Fhssxyr9QbrzQbZbgfrHLQdLpiAMGcHR5AlIRaAoWHGWghZFMjzDAVZKSWaukZdVagC6oAwX5UlaqqvqhJd19JYB9G2Lfqe7uCQ1A20dYylzTehOu4XWms/UCl1gXOh5Qaleq+Kc9x4DV4uuq5D07R/BvKCEC7kX3I4HPzA4aRmDC8WxlgYY3zAlovH71zM9hyP4cfLhKLPvmzQtHQ2qeGhZ/nXTrqF+PyWWEn9T9G9/ALpIPAm0dcIkQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;arachni scan new&quot;
+        title=&quot;arachni scan new&quot;
+        src=&quot;/TIL/static/ca09ea09ff486a68ca3d8e5c2477ce84/c1b63/arachni-scan_new.png&quot;
+        srcset=&quot;/TIL/static/ca09ea09ff486a68ca3d8e5c2477ce84/5a46d/arachni-scan_new.png 300w,
+/TIL/static/ca09ea09ff486a68ca3d8e5c2477ce84/0a47e/arachni-scan_new.png 600w,
+/TIL/static/ca09ea09ff486a68ca3d8e5c2477ce84/c1b63/arachni-scan_new.png 1200w,
+/TIL/static/ca09ea09ff486a68ca3d8e5c2477ce84/ee515/arachni-scan_new.png 1269w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;검사는 기본값으로 진행하였습니다. “Target URL”이라고 적힌 부분에 검사할 웹사이트 주소를 적어주시면 됩니다. 그리고 하단의 “Go!”를 누르면 바로 검사가 진행됩니다.&lt;/p&gt;
+&lt;h3 id=&quot;검사-결과&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%80%EC%82%AC-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;검사 결과 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;검사 결과&lt;/h3&gt;
+&lt;p&gt;아래와 같이 검사결과가 나왔으며, &lt;code class=&quot;language-text&quot;&gt;Informational&lt;/code&gt;을 제외하고 &lt;code class=&quot;language-text&quot;&gt;Medium&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Low&lt;/code&gt; 레벨 취약점이 각 1개씩 총 2개가 발견되어 처리해보았습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 809px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACiElEQVQ4y52U30sUURTHB3oKeilKEqLoKZB66e/poZdSeopCJLUUbUWoUFdTMxLLF7NdzKB0k0rNVVkDdyckZR1rdXdmdt0Z3Z3d+bkz387MVhCBKx34zDn33nPO3DPnzmU2OQ6CIIDb5LC2toZEIgGWjSEcXsRXlsXq6iqi0ShcsW0bjuMcCBMMBhGPx70AVVVhmiZ0XUc6nfFexPM8JEny1t2ASsJEIivYzexWdPSSufkqwPDFBLb3OcQz37CV3fBI5r6DVxLg8z/KkC0cEqZg5lE0FShGDopepmDk/xtG5AXI0h4cu/L3OYww6XQasix7jXAcG5ZlolQqebgNskoWzVk0JmjNMg2P37Zp6OTnagMO+TAWBbkTGnW4RIGapnnJXQe36+5YVYswqQKbdqDTo2g5KJFtEZpd1n92WCgWkFcUGJT0IFF31iHNjyEzN4ad0AjkcBDZzwEUlgJIzU9g/e0opOkh6nJSRCopYDctwTKoTN36G83wdqNHhrDfeRa57ovIddUg13MJqr8GXNsFbN2tQrLpKJTmI2BSjWcg1J+A2HAS2aZqSES26fQvqiE3nsJ8/WXMzE2ha3wUvePP4X/5Avf7OtE6PICb/YO48/ghfM8eoeVpF5iRgVo86b8Bf8/1Mt3XSNfC768r01uHluYriG8nkSwAiT2TsLAp5rCR0cBJBuKShfWshQ2CiS3Mgl1eRGx5CexSGOzKF8QW5hD9FEJ0doZ4j8iHaSq9eLhjI7ZVIeM7B7HjPFLtVH7rcfD1DFK3iNsMRGLy6jFI/Fb5gqDjZNNvaLtdd/6F6Xs3g8HQRzx4E0J7cAq+V6+JCfgCk+gIkB2cxL2hYWTlvXLCChfET0HBNLvO16mtAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;arachni report&quot;
+        title=&quot;arachni report&quot;
+        src=&quot;/TIL/static/553e3615b8277a24414ca288db790243/e80ac/arachni-report.png&quot;
+        srcset=&quot;/TIL/static/553e3615b8277a24414ca288db790243/5a46d/arachni-report.png 300w,
+/TIL/static/553e3615b8277a24414ca288db790243/0a47e/arachni-report.png 600w,
+/TIL/static/553e3615b8277a24414ca288db790243/e80ac/arachni-report.png 809w&quot;
+        sizes=&quot;(max-width: 809px) 100vw, 809px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;두 개의 취약점 모두 어떤 특정 헤더가 존재하지 않는다는 뜻이었습니다. 인터넷에 검색을 해보니, &lt;code class=&quot;language-text&quot;&gt;Strict-Transport-Security&lt;/code&gt; 헤더는 클라이언트(브라우저)에게 &lt;code class=&quot;language-text&quot;&gt;https://&lt;/code&gt;를 강제하는 헤더이고, 이것 없이 그냥 http를 &lt;code class=&quot;language-text&quot;&gt;301&lt;/code&gt; 응답으로 https로 리다이렉트 시키는 것은 여전히 &lt;code class=&quot;language-text&quot;&gt;man-in-the-middle&lt;/code&gt; 공격에 취약하기 때문에 반드시 설정해야한다고 합니다.&lt;/p&gt;
+&lt;p&gt;또 다른 취약점은 &lt;code class=&quot;language-text&quot;&gt;X-Frame-Options&lt;/code&gt; 헤더가 존재하지 않는다는 뜻으로, 이는 웹사이트가 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;iframe&gt;&lt;/code&gt;안에 표시되어도 괜찮은 지를 결정한다고 합니다. 웹사이트가 iframe에 표시되는 경우에는 다른 악성 웹사이트에서 우리 사이트의 내용을 포함할 수 있게 되기에 &lt;code class=&quot;language-text&quot;&gt;Clickjacking&lt;/code&gt; 공격에 취약해진다고 합니다.&lt;/p&gt;
+&lt;h3 id=&quot;해결&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B4%EA%B2%B0&quot; aria-label=&quot;해결 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;해결&lt;/h3&gt;
+&lt;p&gt;두 취약점 모두 헤더만 설정해주면 되는 문제였기에, Nginx의 &lt;code class=&quot;language-text&quot;&gt;.conf&lt;/code&gt;파일에 해당 헤더를 포함하도록 설정해주어 간단히 해결되었습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# /etc/nginx/nginx.conf
+
+http {
+    # ...생략
+    add_header X-Frame-Options DENY;
+    add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하고 Nginx를 restart한 다음 다시 취약점 점검을 돌려보았습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 784px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABvUlEQVQoz5WRaW/TQBCG9/9/AIGgoiBAgOALEhIVQkIhbqoEKjkCksZxczi37VCa1K6P9Xp9vKzXEFIhmjLS4xnP7OwxLxmPRhgOBlguv6Pf76HT0bBYzFFVFNTrdaiqCkXEQ8NAYVmeIc/zf0IU5RBvDw5gmqZsiGOOLMukD4JA4ns+OOeyjhzXGtF1Ha12C67r4E9H/lenOF/ebhfknNkw/QmmzhCDH10Yqx5GAvNyDMufwvImJSK2bwBhaYQoCQUUlAcI4wBUEPHwV/7/ILZlYzFfYL1a75zPTYy4rosLx4HneXLwpSAxkiSRxDyW+d85GW/BRJ4yhkj4IibFhzGRpBRhSGVTFEWyWGxCRVz8Fx55WgrEGVJGt+6VboQkSczARZFHYkGWXvscdXKGZ596eN7o4kmtjf33DdxXTrBX07B32JGQE2OGL/0xVN1AZ2JhvvYxXXmYbTFdXcJauzDOHBwbNppi4+Z4iepXHRVthkp3voG8bGh4LE67V23j1odvuPOxfYW7gtuVFh69q8kR7BTlTXOAV8eneN0c4mnjFPtHGh4eda/wQDzpReUzfBqVExPCZVkufUm+4Sevi4ZIqzfXogAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;arachni report after&quot;
+        title=&quot;arachni report after&quot;
+        src=&quot;/TIL/static/2e0fec48f867424ee0aa4fba61fba6c1/4971b/arachni-report-after.png&quot;
+        srcset=&quot;/TIL/static/2e0fec48f867424ee0aa4fba61fba6c1/5a46d/arachni-report-after.png 300w,
+/TIL/static/2e0fec48f867424ee0aa4fba61fba6c1/0a47e/arachni-report-after.png 600w,
+/TIL/static/2e0fec48f867424ee0aa4fba61fba6c1/4971b/arachni-report-after.png 784w&quot;
+        sizes=&quot;(max-width: 784px) 100vw, 784px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이렇게 취약점이 사라진 것을 볼 수 있습니다!&lt;/p&gt;
+&lt;p&gt;오늘은 웹 취약점을 점검하는 법과 해결한 사례에 대해 적어보았습니다. 프론트엔드 개발자로 일을 하며 이러한 서버쪽 취약점에 대해서는 알아볼 기회가 없었는데 이번 기회에 직접 검색을 통해 해결해 나아가면서 좋은 경험이 되었던 것 같습니다. 앞으로는 lighthouse 점수만 신경 쓸 것이 아니라 이러한 취약점에도 신경쓰며 배포하는 개발자가 되면 좋겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Quick Start]]></title><description><![CDATA[Getting Started 😎 1. Create a Gatsby site. If you are not using , following Gatsby Getting Started 2. Start developing. 3. Add your content…]]></description><link>https://guest-01.github.io/TIL/development/quick_start/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/quick_start/</guid><pubDate>Sun, 05 Jul 2020 17:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;getting-started-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#getting-started-&quot; aria-label=&quot;getting started  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting Started 😎&lt;/h1&gt;
 &lt;h2 id=&quot;1-create-a-gatsby-site&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-create-a-gatsby-site&quot; aria-label=&quot;1 create a gatsby site permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Create a Gatsby site.&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# create a new Gatsby site using the blog starter
 $ npx gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -192,7 +351,7 @@ draft: false
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Let’s Start! &lt;a href=&quot;https://github.com/JaeYeopHan/gatsby-starter-bee&quot;&gt;Go&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Category Test1]]></title><description><![CDATA[Test1]]></description><link>https://guest-01.github.io/TIL/category1/test1/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/category1/test1/</guid><pubDate>Thu, 02 Jul 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Category Test2]]></title><description><![CDATA[Test1]]></description><link>https://guest-01.github.io/TIL/category2/test2/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/category2/test2/</guid><pubDate>Thu, 02 Jul 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Category Test3]]></title><description><![CDATA[Test1]]></description><link>https://guest-01.github.io/TIL/category3/test3/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/category3/test3/</guid><pubDate>Thu, 02 Jul 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Category Test4]]></title><description><![CDATA[Test1]]></description><link>https://guest-01.github.io/TIL/category4/test4/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/category4/test4/</guid><pubDate>Thu, 02 Jul 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test9]]></title><description><![CDATA[Test9]]></description><link>https://guest-01.github.io/TIL/essay/test9/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test9/</guid><pubDate>Sun, 14 Jun 2020 16:29:13 GMT</pubDate><content:encoded>&lt;p&gt;Test9&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test8]]></title><description><![CDATA[Test8]]></description><link>https://guest-01.github.io/TIL/essay/test8/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test8/</guid><pubDate>Sun, 14 Jun 2020 16:28:13 GMT</pubDate><content:encoded>&lt;p&gt;Test8&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test7]]></title><description><![CDATA[Test7]]></description><link>https://guest-01.github.io/TIL/essay/test7/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test7/</guid><pubDate>Sun, 14 Jun 2020 16:27:13 GMT</pubDate><content:encoded>&lt;p&gt;Test7&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test6]]></title><description><![CDATA[Test6]]></description><link>https://guest-01.github.io/TIL/essay/test6/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test6/</guid><pubDate>Sun, 14 Jun 2020 16:26:13 GMT</pubDate><content:encoded>&lt;p&gt;Test6&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test5]]></title><description><![CDATA[Test5]]></description><link>https://guest-01.github.io/TIL/essay/test5/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test5/</guid><pubDate>Sun, 14 Jun 2020 16:25:13 GMT</pubDate><content:encoded>&lt;p&gt;Test5&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test4]]></title><description><![CDATA[Test4]]></description><link>https://guest-01.github.io/TIL/essay/test4/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test4/</guid><pubDate>Sun, 14 Jun 2020 16:24:13 GMT</pubDate><content:encoded>&lt;p&gt;Test4&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test3]]></title><description><![CDATA[Test3]]></description><link>https://guest-01.github.io/TIL/essay/test3/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test3/</guid><pubDate>Sun, 14 Jun 2020 16:23:13 GMT</pubDate><content:encoded>&lt;p&gt;Test3&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test2]]></title><description><![CDATA[Test2]]></description><link>https://guest-01.github.io/TIL/essay/test2/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test2/</guid><pubDate>Sun, 14 Jun 2020 16:22:13 GMT</pubDate><content:encoded>&lt;p&gt;Test2&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test1]]></title><description><![CDATA[Test1]]></description><link>https://guest-01.github.io/TIL/essay/test1/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/essay/test1/</guid><pubDate>Sun, 14 Jun 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Second Post]]></title><description><![CDATA[Second Post]]></description><link>https://guest-01.github.io/TIL/development/second/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/second/</guid><pubDate>Sun, 03 Feb 2019 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Second Post&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Third Post]]></title><description><![CDATA[Third Post]]></description><link>https://guest-01.github.io/TIL/development/third/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/third/</guid><pubDate>Fri, 01 Feb 2019 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Third Post&lt;/p&gt;</content:encoded></item><item><title><![CDATA[about]]></title><description><![CDATA[Your name Thank you for reading my resume. If you want to contact me, Please send me an email.]]></description><link>https://guest-01.github.io/TIL/resume-en/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/resume-en/</guid><pubDate>Sun, 27 Jan 2019 16:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;your-name&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#your-name&quot; aria-label=&quot;your name permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Your name&lt;/h1&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[about]]></title><description><![CDATA[Your name Thank you for reading my resume. If you want to contact me, Please send me an email.]]></description><link>https://guest-01.github.io/TIL/resume-en/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/resume-en/</guid><pubDate>Sun, 27 Jan 2019 16:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;your-name&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#your-name&quot; aria-label=&quot;your name permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Your name&lt;/h1&gt;
 &lt;div align=&quot;center&quot;&gt;
 &lt;p&gt;&lt;em&gt;Thank you for reading my resume. If you want to contact me, Please send me an email.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Draft]]></title><description><![CDATA[Draft Post]]></description><link>https://guest-01.github.io/TIL/development/draft/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/draft/</guid><pubDate>Thu, 03 Jan 2019 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Draft Post&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/div&gt;</content:encoded></item></channel></rss>
