@@ -1,9 +1,9 @@
 ---
 title: '비밀번호를 브라우저 메모리에서 숨기기 (1)'
 date: 2022-11-06 23:46:01
-category: draft
+category: atWork
 # thumbnail: { thumbnailSrc }
-draft: false
+draft: true
 ---
 
 <!-- ### TL;DR (요약)

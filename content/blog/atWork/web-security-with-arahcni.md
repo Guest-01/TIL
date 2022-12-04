@@ -1,7 +1,7 @@
 ---
 title: 'Arachni로 웹 취약점 개선하기'
 date: 2022-10-31 22:24:00
-category: 'draft'
+category: 'atWork'
 draft: false
 ---
 
