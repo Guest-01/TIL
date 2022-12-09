@@ -24,6 +24,9 @@ export const Bio = forwardRef((props, ref) => {
               />
               <div className="author-name">
                 <span className="author-name-prefix">Written by</span>
+                {/* <Link to={'/about'} className="author-name-content">
+                  <span>@{author}</span>
+                </Link> */}
                 <a href={'https://guest-01.github.io/'} className="author-name-content">
                   <span>@{author}</span>
                 </a>
