@@ -1,4 +1,134 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 05 Dec 2022 12:59:50 GMT</lastBuildDate><item><title><![CDATA[비밀번호를 브라우저 메모리에서 숨기기 (1)]]></title><description><![CDATA[※ 참고 저는 brave 브라우저를 사용하고 있어서, 작업관리자와 덤프 파일명에 라고 적혀있습니다만 chrome…]]></description><link>https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-1/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-1/</guid><pubDate>Sun, 06 Nov 2022 23:46:01 GMT</pubDate><content:encoded>&lt;!-- ### TL;DR (요약)
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 Dec 2022 11:24:26 GMT</lastBuildDate><item><title><![CDATA[비밀번호를 브라우저 메모리에서 숨기기 (2)]]></title><description><![CDATA[본 글은 지난 ‘비밀번호를 브라우저 메모리에서 숨기기 (…]]></description><link>https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-2/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-2/</guid><pubDate>Mon, 07 Nov 2022 22:12:01 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;본 글은 지난 ‘비밀번호를 브라우저 메모리에서 숨기기 (1)‘에서 이어집니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;지난-문제-요약&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A7%80%EB%82%9C-%EB%AC%B8%EC%A0%9C-%EC%9A%94%EC%95%BD&quot; aria-label=&quot;지난 문제 요약 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;지난 문제 요약&lt;/h2&gt;
+&lt;p&gt;사용자가 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 태그에 비밀번호를 입력하고 나면, 크게 아래 두가지 행위에 의해 메모리에 남게 됩니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;input&gt;&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;blur&lt;/code&gt; 이벤트가 일어나는 경우 (즉, &lt;code class=&quot;language-text&quot;&gt;focus&lt;/code&gt;를 잃는 경우)&lt;/li&gt;
+&lt;li&gt;자바스크립트 변수에 문자열을 저장하는 경우&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;두 가지 경우를 어떻게 해결해야 하는지 알아보기 위해 나름 보안이 중요한 &lt;del&gt;은행&lt;/del&gt;신용카드 사이트를 참고해보았습니다.&lt;/p&gt;
+&lt;h2 id=&quot;xx카드-웹사이트-사례&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#xx%EC%B9%B4%EB%93%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%82%AC%EB%A1%80&quot; aria-label=&quot;xx카드 웹사이트 사례 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;XX카드 웹사이트 사례&lt;/h2&gt;
+&lt;p&gt;회사에서 제공하는 법인카드의 홈페이지를 들어가보았습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 991px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 67.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADi0lEQVQ4y1WS+0/TVxjGv/+LyZbo0AnLkg11bm7DH+fCHFFuyp1yE3QzbqBcMtxWaIulQyhaChaKG4hAW8plRVrubBDAGbKZBRyESy+2ZSAFPjttFqMnefK89/fkOUfyPnfj3NhgbW0dj+c5fr8fr9eHz/cqewV7Rd6D2+VmZyeAy+XC6XSxIXqDttvtCdVK/7h57fh8Hvb3A2xt+YW3i3/TSyAQEDHY29sP1WxuekK8ve17pXMHn9+NNGhbYNi+wOjwAiP2JwzZ5nEM/YF98DGOR0+wP5rDarbQ1t6MvkmLocmIpet3BqyP6TXP0tczT7+wreY5EZ9BunjuFgkxKuK+VBJ3VkH82SALfKEkNrqKpDgVHx+PRJaZQEXFTdTKaoxNDmo1PQJWdFobTXds6OoG0NbYkPKz7pKboSUnvY5LsnryMrXIkmuQpdSQlqghPkZO1EexmDoHXpMmsLstZNhhnz2WnT5c3k22t7aRqlQGlBUt3Cy7R9mNIFooKTRS+LWB0sJWiq62kJehp88yx54YsLy8Ih7Cyfq6k61//fy56OboRRNZigkh+S5Sva4Zrc6A3tAqNGpFpbqLWm2gUm4QSwxkpWlIiq0JabQvhF9aWmJtdZWVFTF4fZW/n22Qc2ua251P2X2xg1RZXUdldT1avRFNrY6CK8WUllWFUCJQdF1BQYGcoaEZ1sUXsQ+PMzE1zcjoJMMjk0xNzfDb5ATPlhbFl3uB1Ghsx3i/nQ5zLw2G+/xYoeVGcRWFRQrBKq4VyslOu8xYvwP72ATffa9Eqa5Fob6NXKkJ2aXlClrbOkLaSo0/PxSFk9gcY7R1mtDUNCKXaykv14hbqinOv863V+WUpZfRVDuIvn4cvXaUhtoR9HWj6AQ3CL7zkwPlD71I76c9ICrfwmmBT/O6OZnZwYm0do6ltnFccGRis+AHvBNjIOzMPcKiWzn4uZG3Qtzy0j8k8Ha0Eck0vIi8eZaI1B6irtgIu2DmwLkuTuYOMP90g5SKCSKz+ojM7icsycKB852kV44z+9cap7+y8cnlXzlVMMCRZAsRKWakEt00MtUE76aa+TC3lyMXujkY18l7GRa0XQuc+WaQyMyeEMISu3jz/EM+u2ZD88scx2RWPsjp5VReH0eTTKEe6Q2x8XBiN+HJJiIEgolwgcPBwfFdYkh3aHNEsvllLhg7lNAdWh7Mhf/fdyLbyn8sLjmPopCFdAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;신한카드-홈페이지-스크린샷&quot;
+        title=&quot;신한카드-홈페이지-스크린샷&quot;
+        src=&quot;/TIL/static/dda7c4582c12f771cd82624003739f40/1b19f/card-homepage.png&quot;
+        srcset=&quot;/TIL/static/dda7c4582c12f771cd82624003739f40/5a46d/card-homepage.png 300w,
+/TIL/static/dda7c4582c12f771cd82624003739f40/0a47e/card-homepage.png 600w,
+/TIL/static/dda7c4582c12f771cd82624003739f40/1b19f/card-homepage.png 991w&quot;
+        sizes=&quot;(max-width: 991px) 100vw, 991px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;들어가면 우선 보안프로그램을 설치하라고 합니다. 사용하는 보안 프로그램은 &lt;code class=&quot;language-text&quot;&gt;nProtect Online Security&lt;/code&gt;인데 이것이 후술할 키보드 입력에 영향을 미치는 것 같습니다.&lt;/p&gt;
+&lt;p&gt;이곳에서 아이디와 비밀번호를 입력하고 로그인을 한 뒤, 동일하게 브라우저의 메모리 덤프를 떠서 비밀번호를 검색해보았습니다. 결과는 &lt;strong&gt;비밀번호가 나오지 않았습니다&lt;/strong&gt;. 레퍼런스를 찾았으니 이제 어떻게 구현하였는지 뜯어보아야 합니다.&lt;/p&gt;
+&lt;h2 id=&quot;레퍼런스-뜯어보기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4-%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;레퍼런스 뜯어보기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;레퍼런스 뜯어보기&lt;/h2&gt;
+&lt;p&gt;우선 개발자 도구를 열어보려고 하니 &lt;code class=&quot;language-text&quot;&gt;Ctrl + Shift + I&lt;/code&gt;가 먹히지 않는 것을 발견했습니다. 하지만 브라우저 메뉴를 통해 개발자도구를 열 수는 있었습니다.&lt;/p&gt;
+&lt;p&gt;개발자도구로 비밀번호 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 태그를 검사해보니, &lt;code class=&quot;language-text&quot;&gt;npkencrypt=&quot;on&quot;&lt;/code&gt;와 같은 속성(property)가 있었습니다. 아마 위에서 설치한 보안 프로그램이 키보드 관련 입력을 처리하는 것으로 추정 됩니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 581px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABV0lEQVQY05WR207CQBRF+//f4ZMPJmqMxmAMUhSoEixtqZdyhwpKsXTaTgu4POoXOMnO7Jwzl7OzjFxlaKXZlyXbYofOC9briELn7IuS/y6jH22xex+4wRInCLH8iLozw5Ja013jjyPRik5/gzdNeZ5GPAYxLS+m7SvcoabV09w6CnuUYdxPNeeNOWd3b1xZE+r2gHonoPKw4LT5zoW1ED/jpjOk1vap3r9w3Q65bD9xYpkcPzxyUO2KDzGf1d+Dpt2nas+pOCk1mezWnYjGNHpTbtwlpr+i6c+pOUtq7humt+LSG3LkWRzaDY5fmlS8Aa3XT4wg2uEMVrhjiTSTseWD3jzFn21wJonUErqjn7jqV91JTkeidUcabyz9YSz3c5xRjh9qDPZ7FuGGJE4FQkaWlZRaAOVa/FYgbUk2hewlX0VKKdByOaMzjVIJaaakH1Ommp1A/AYGOLg4eM6gHAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;비밀번호-입력칸-개발자도구화면&quot;
+        title=&quot;비밀번호-입력칸-개발자도구화면&quot;
+        src=&quot;/TIL/static/b18a1a9d796694c9a1d6ac7bdc8a3a7e/92d15/card-inputtag.png&quot;
+        srcset=&quot;/TIL/static/b18a1a9d796694c9a1d6ac7bdc8a3a7e/5a46d/card-inputtag.png 300w,
+/TIL/static/b18a1a9d796694c9a1d6ac7bdc8a3a7e/92d15/card-inputtag.png 581w&quot;
+        sizes=&quot;(max-width: 581px) 100vw, 581px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;대체 외부 프로그램을 통해 어떻게 브라우저 입력에 영향을 줄 수 있는지 너무 궁금하였지만, 알아낸다 쳐도 제가 외부 보안프로그램을 따라 만들 순 없기 때문에 여기까지인가 싶었습니다.&lt;/p&gt;
+&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 태그의 속성값을 이용해 입력 값을 외부 프로그램에 위임한다고 하더라도, 일단은 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 태그에 값이 입력되고 focus를 잃는 순간 메모리에 저장되는 것은 어떻게 막는 것인지 궁금해졌습니다. 그래서 저는 개발자도구에서 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt;태그의 &lt;code class=&quot;language-text&quot;&gt;type=&quot;password&quot;&lt;/code&gt; 값을 &lt;code class=&quot;language-text&quot;&gt;type=&quot;text&quot;&lt;/code&gt;로 변경하고 비밀번호를 쳐보았고 깜짝 놀랄만한 발견을 하게 됩니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 448px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACv0lEQVQ4y5WSSU9TURTH+0VcmegnMCzUiBEiBiNKiBPGxIXuXJiYOKx14UeQiO6MkWCVqQUZ2vJoAaEDBaEtr8N7dH4ttrSF2r7+vH3ggHHjSf4595x77v+eyeRyLRAMBlhaWsLn9bHq96MoCpFolOVlN3bHLNKcC0ly4XBIzM8v4nZ78XhWxL0Hm92Ba/4LK/41Zp0uTIlEkqaoqko2q7FTLPJTUqmM+CxEOBwjElEIy1HiW0k0LS9it0mnNTYCm0RjcQqFEsFNGVM4HOFvaTRA13UDv3yGv0G9rlOr1fmXJNMpTM3SmrJX/U5ld49dgaauCruJ3b3qL9T1hvikQU2Q9g2HePzSw9M+Ly/erlGtQSabxiSHZYOwXquKcvMUCznyuQyVcpGysMvFbQr5DDvfciJK34fItOuJnSM9Zo7dHOLE3TG2S3WymiCMxVSD8MtXFbtHZdbbhILDo2BbTWFbS+9rgWl/khlvjMXVCLefOzlz/zMXH83Q8XDKIMzls5gUZZ9w0LbO28EVBj76GDB7eW9eoX8uS79T440rx2uXxitnnndShBHJT+8zJ0dvDHG8d1gQT1Ao66Jk0UNF3TII42JiISVNIJpgIxInGEsgqylCsSTrsspGeIuguAspKZREBk8gjeRLsrCWwR3I7nMk4pjWv24cmpReF4Mo74g+/Z6klkmJ/n6jodcORq5TKQm7Vjn0NpfPY/IuLRvGwqKbEcsk45N2rBMzWD/bsAhtGZ9h/OBs+Cdsht3UzZgx6zST05JYpRqlUklk6PMZhHfuPeDUuct0dt2i41IvZ9t6ONPWTXvnDYHrtJ7voeVUJ+cuXBW4Rmt7NyfPXqbldKeIu2Ise6VSEVM+2ENpboGBDyN8Gh7n45AV8yeLAeM8ZDnk+9MeNI8yap0ylt3IUJZlsf3/3vz/kbooWdM0fgA/S4f7LcBLmQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;값이-변경된-비밀번호-입력칸&quot;
+        title=&quot;값이-변경된-비밀번호-입력칸&quot;
+        src=&quot;/TIL/static/72450124fd22127469a97e21b467cba8/33b38/card-input-change.png&quot;
+        srcset=&quot;/TIL/static/72450124fd22127469a97e21b467cba8/5a46d/card-input-change.png 300w,
+/TIL/static/72450124fd22127469a97e21b467cba8/33b38/card-input-change.png 448w&quot;
+        sizes=&quot;(max-width: 448px) 100vw, 448px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;위와 같이 제가 비밀번호를 입력하면 한글자씩 입력하는 순간 다른 값(&lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;)으로 바꿔치기를 하고 있었습니다. 이렇게 되면 입력 후에 &lt;code class=&quot;language-text&quot;&gt;blur&lt;/code&gt; 이벤트가 일어나더라도 입력칸 안에는 바꿔치기한 의미 없는 문자열이 들어있기 때문에 메모리에는 비밀번호가 남지 않게 됩니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;즉, 처음에 파악한 1번 문제인 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 태그 자체의 값이 메모리에 남는 문제는 이렇게 입력값을 한글자씩 다른 값으로 치환함으로 해결할 수 있는 것입니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;그럼-실제-비밀번호는-어떻게&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B7%B8%EB%9F%BC-%EC%8B%A4%EC%A0%9C-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C&quot; aria-label=&quot;그럼 실제 비밀번호는 어떻게 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;그럼 실제 비밀번호는 어떻게…?&lt;/h2&gt;
+&lt;p&gt;그런데 이렇게 글자를 치환해버리면, 최종적으로 입력칸에 남는 값은 의미없는 값이 되어버리고 로그인 API에 보낼 실제 비밀번호 값은 어디서 구해야할까요?&lt;/p&gt;
+&lt;p&gt;우선 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;input onkeydown=&quot;handleKeyDown(event)&quot;&gt;&lt;/code&gt; 이런 식으로 &lt;code class=&quot;language-text&quot;&gt;onkeydown&lt;/code&gt; 이벤트에 함수를 등록하여 입력하는 글자마다 처리를 할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;참고로 &lt;code class=&quot;language-text&quot;&gt;onkeypress&lt;/code&gt;는 이제 deprecated 되었습니다. 그리고 지난 번 사용했던 &lt;code class=&quot;language-text&quot;&gt;oninput&lt;/code&gt; 이벤트는 &lt;code class=&quot;language-text&quot;&gt;preventDefault()&lt;/code&gt;가 되지 않는 이벤트(취소할 수 없는 이벤트)이기 때문에 &lt;code class=&quot;language-text&quot;&gt;onkeydown&lt;/code&gt;을 사용하는 것이 더 편합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이때 사용자가 입력한 글자를 받을 수 있고 &lt;code class=&quot;language-text&quot;&gt;input.value&lt;/code&gt;에는 다른 값을 넣어줌으로 1번 문제를 해결했습니다. 그러면 사용자가 입력한 실제 값을 별도의 배열에 넣어두었다가 보내면 되지 않을까요?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; pw &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleKeyDown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;altKey &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ctrlKey &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shiftKey&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    pw&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 실제 입력값은 배열에 저장&lt;/span&gt;
+    event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;a&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 아무 의미 없는 값으로 채움&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하면 실제 사용자가 입력한 비밀번호는 배열로 &lt;code class=&quot;language-text&quot;&gt;pw&lt;/code&gt; 변수에 저장되고, &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 태그에는 사용자가 입력한 자릿수 만큼의 &lt;code class=&quot;language-text&quot;&gt;&apos;a&apos;&lt;/code&gt;라는 문자열이 들어가게 됩니다.&lt;/p&gt;
+&lt;p&gt;그리고 로그인 API에는 배열의 들어있는 값을 합쳐서 보내면 될까요?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;…아니요!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;사용자의 입력값을 한글자씩 담은 배열 &lt;code class=&quot;language-text&quot;&gt;pw&lt;/code&gt;를 최종적으로 합쳐 문자열로 만드는 순간, 브라우저 메모리에는 해당 문자열이 남게됩니다. 이 문자열을 메모리에서 지우는 방법을 찾아보았으나, 전혀 방법이 없었습니다. (혹시 있다면 댓글 부탁드립니다)&lt;/p&gt;
+&lt;p&gt;따라서 2번 문제의 해결방법은 “문자열을 쓰지 않는 것”입니다.&lt;/p&gt;
+&lt;p&gt;제일 편한 것은 배열을 그대로 JSON으로 보내는 것입니다. 그럴려면 백엔드 개발자와 협의가 필요하겠죠. 저 같은 경우에는 조금 다른 방법으로 협의했는데, 배열에 담긴 글자들을 하나씩 &lt;code class=&quot;language-text&quot;&gt;hash&lt;/code&gt;하여서 하나의 문자열로 길게 합친 다음, 다시 최종적으로 &lt;code class=&quot;language-text&quot;&gt;hash&lt;/code&gt;하는 것입니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; pw &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;s&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;s&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;w&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;o&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;r&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;d&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// ...각 요소마다 해시함수를 거치면 (생략)&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;148de9c5a7a44d19e56cd9ae1a554bf67847afb0c58f6e12fa29ac7ddfca9940&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//...후략&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// ...위 결과를 다시 합친 다음 하나의 해시값으로 나오도록 다시 해싱&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; finalPw &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;9440bb22372bb0074e78dbabf690b16e2688770ec5567a4e3226bcf8d79868eb&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 위의 값을 비밀번호로 보고 API에 보낸다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;참고로, 그럼 배열에 담긴 글자들도 메모리에 어짜피 남는 것 아닌가 라는 의문이 드실 수 있습니다. 제가 테스트해보니, 자바스크립트 배열은 연속된 메모리 주소에 저장되지 않습니다. 마치 &lt;code class=&quot;language-text&quot;&gt;LinkedList&lt;/code&gt;처럼 흩어져 있습니다.&lt;/p&gt;
+&lt;p&gt;아마 자바스크립트 배열은 길이가 런타임에 결정되는 동적인 배열이고, 여러 Type을 함께 담을 수 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;Stack&lt;/code&gt;이 아닌 &lt;code class=&quot;language-text&quot;&gt;Heap&lt;/code&gt;에 저장되는 것 같습니다. 메모리 덤프를 떠보면 배열의 요소들이 서로 다른 주소에 흩어져 있어서 전체 입력값을 유추할 수 없습니다.&lt;/p&gt;
+&lt;p&gt;따라서 배열을 사용하면 자바스크립트 문자열이 메모리에 남는 문제를 해결할 수 있는 것입니다. (다만 API 개발자와의 협의가 필요)&lt;/p&gt;
+&lt;p&gt;이렇게 하여 저는 저희 회사 솔루션의 보안기능 평가를 통과할 수 있게 되었습니다.&lt;/p&gt;
+&lt;p&gt;일반적으로는 아마 XX카드사 홈페이지 처럼 키보드 보안프로그램을 연동시켜 해결하는 것으로 알고 있습니다. 만일 회사에서 제대로 지원을 해준다면 이런 방법이 더 정석이니 그렇게 하는 것이 좋습니다. 이 가이드는 제가 어떻게든 삽질을 통해 해결한 방법을 작성한 것이니 참고만 해주시면 감사하겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[비밀번호를 브라우저 메모리에서 숨기기 (1)]]></title><description><![CDATA[※ 참고 저는 brave 브라우저를 사용하고 있어서, 작업관리자와 덤프 파일명에 라고 적혀있습니다만 chrome…]]></description><link>https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-1/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-1/</guid><pubDate>Sun, 06 Nov 2022 23:46:01 GMT</pubDate><content:encoded>&lt;!-- ### TL;DR (요약)
 
 1. 사용자 입력을 하나하나 바꿔치기 한다.
 2. 절대 비밀번호를 문자열로 가지고 있지 않는다.
