@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 Dec 2022 11:24:26 GMT</lastBuildDate><item><title><![CDATA[비밀번호를 브라우저 메모리에서 숨기기 (2)]]></title><description><![CDATA[본 글은 지난 ‘비밀번호를 브라우저 메모리에서 숨기기 (…]]></description><link>https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-2/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-2/</guid><pubDate>Mon, 07 Nov 2022 22:12:01 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 17 Dec 2022 09:12:12 GMT</lastBuildDate><item><title><![CDATA[비밀번호를 브라우저 메모리에서 숨기기 (2)]]></title><description><![CDATA[본 글은 지난 ‘비밀번호를 브라우저 메모리에서 숨기기 (…]]></description><link>https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-2/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/hide-pw-in-memory-2/</guid><pubDate>Mon, 07 Nov 2022 22:12:01 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;본 글은 지난 ‘비밀번호를 브라우저 메모리에서 숨기기 (1)‘에서 이어집니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;지난-문제-요약&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A7%80%EB%82%9C-%EB%AC%B8%EC%A0%9C-%EC%9A%94%EC%95%BD&quot; aria-label=&quot;지난 문제 요약 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;지난 문제 요약&lt;/h2&gt;
@@ -394,7 +394,180 @@ http {
     &lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;이렇게 취약점이 사라진 것을 볼 수 있습니다!&lt;/p&gt;
-&lt;p&gt;오늘은 웹 취약점을 점검하는 법과 해결한 사례에 대해 적어보았습니다. 프론트엔드 개발자로 일을 하며 이러한 서버쪽 취약점에 대해서는 알아볼 기회가 없었는데 이번 기회에 직접 검색을 통해 해결해 나아가면서 좋은 경험이 되었던 것 같습니다. 앞으로는 lighthouse 점수만 신경 쓸 것이 아니라 이러한 취약점에도 신경쓰며 배포하는 개발자가 되면 좋겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Quick Start]]></title><description><![CDATA[Getting Started 😎 1. Create a Gatsby site. If you are not using , following Gatsby Getting Started 2. Start developing. 3. Add your content…]]></description><link>https://guest-01.github.io/TIL/development/quick_start/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/quick_start/</guid><pubDate>Sun, 05 Jul 2020 17:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;getting-started-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#getting-started-&quot; aria-label=&quot;getting started  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting Started 😎&lt;/h1&gt;
+&lt;p&gt;오늘은 웹 취약점을 점검하는 법과 해결한 사례에 대해 적어보았습니다. 프론트엔드 개발자로 일을 하며 이러한 서버쪽 취약점에 대해서는 알아볼 기회가 없었는데 이번 기회에 직접 검색을 통해 해결해 나아가면서 좋은 경험이 되었던 것 같습니다. 앞으로는 lighthouse 점수만 신경 쓸 것이 아니라 이러한 취약점에도 신경쓰며 배포하는 개발자가 되면 좋겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[npm audit으로 취약점 제거하기]]></title><description><![CDATA[…]]></description><link>https://guest-01.github.io/TIL/atWork/npm-audit-fix/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/npm-audit-fix/</guid><pubDate>Tue, 24 May 2022 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;오늘은 빌드 시에 발생하는 취약성 로그를 해결하라는 요청을 받았습니다.&lt;/p&gt;
+&lt;p&gt;저희 솔루션은 &lt;code class=&quot;language-text&quot;&gt;make&lt;/code&gt; 스크립트를 이용하여 빌드를 하는데, 이때 &lt;code class=&quot;language-text&quot;&gt;npm audit fix&lt;/code&gt;가 함께 들어가있습니다. 때문에 빌드를 하게 되면 호환이 깨지지 않는 범위내에서 최대한 취약성을 제거하고 빌드를 하게 되는데, 이 문구가 나오지 않도록 개발단계에서 미리 패키지들을 업데이트해달라는 뜻입니다. 또한 &lt;code class=&quot;language-text&quot;&gt;npm audit fix&lt;/code&gt;로 해결되지 않은 채 빌드 되는 부분도 있어서 (하위 호환이 깨지는 경우에는 skip하기 때문) 이 부분도 함께 해결을 해야했습니다.&lt;/p&gt;
+&lt;h2 id=&quot;사용하지-않는-패키지로부터-발생하는-취약점-제거&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C%EB%B6%80%ED%84%B0-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%9C%EA%B1%B0&quot; aria-label=&quot;사용하지 않는 패키지로부터 발생하는 취약점 제거 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;사용하지 않는 패키지로부터 발생하는 취약점 제거&lt;/h2&gt;
+&lt;p&gt;먼저 &lt;code class=&quot;language-text&quot;&gt;npm audit&lt;/code&gt;을 해보면 아래와 같이 총 130개의 취약점이 발견되었다고 뜨는 상태입니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 864px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 24.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAABB0lEQVQY03WQy1KEMBBF+Q15CQgDAcJrCCQZfFA4g+5dWqVf4Mb/r2v3lC5dnLp9k65+OYcsRd82qISArCrUZYmyKJBEMXzXg+958FyXYhdhECAKQ9wS4T84XVFiahQWPcEqBTOOkKJELxMihW5b2OEI0ykU8R1C9wYJN/F9eKy/+OQDaujoIcP72wGTGK/F7rXGg7HEjKfF4NEY7OuKk5pwbFp0tEVPCNpE1jUq3oo0yzJEUQRnXSW+v1IMscJle8Z+OeO8bXjdX2CpmJ5nGEJRM/Yna7EsC2Z6sxSzahqCCws6m6OmAp8fFWTeXT+YvyROKGkSTmZlz5NxnOf51Rd0b1aekPkBNHKZQn1VavUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;최초-취약점-개수&quot;
+        title=&quot;최초-취약점-개수&quot;
+        src=&quot;/TIL/static/ce1cc35e44d9d0192418a8a4096c084f/9cab2/npm-audit-init.png&quot;
+        srcset=&quot;/TIL/static/ce1cc35e44d9d0192418a8a4096c084f/5a46d/npm-audit-init.png 300w,
+/TIL/static/ce1cc35e44d9d0192418a8a4096c084f/0a47e/npm-audit-init.png 600w,
+/TIL/static/ce1cc35e44d9d0192418a8a4096c084f/9cab2/npm-audit-init.png 864w&quot;
+        sizes=&quot;(max-width: 864px) 100vw, 864px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;제가 제일 먼저 한 것은, &lt;strong&gt;실제로 사용하지 않는데 설치된 패키지들&lt;/strong&gt;에 의해 발생하는 취약점을 제거하는 것입니다. 프로젝트를 처음 초기화 할 때, &lt;code class=&quot;language-text&quot;&gt;@vue/cli&lt;/code&gt;를 사용하였는데 이때 사용하지 않을 도구까지 함께 설치했던 것 같습니다. &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;안에 &lt;code class=&quot;language-text&quot;&gt;dependencies&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;devDependencies&lt;/code&gt;를 보고 사용하지 않는 패키지가 있으면 삭제합니다. 아래와 같이 사용하지 않는 패키지들을 삭제하고 나니 확연히 줄어든 취약점 개수를 알 수 있었습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;eslint-config-vuetify&lt;/code&gt; 제거 후&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;found 128 vulnerabilities (2 low, 30 moderate, 73 high, 23 critical)&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@vue/cli-plugin-e2e-cypress&lt;/code&gt; 제거 후&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;found 119 vulnerabilities (2 low, 27 moderate, 69 high, 21 critical)&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@vue/cli-plugin-unit-jest&lt;/code&gt; 제거 후&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;found 39 vulnerabilities (2 low, 10 moderate, 21 high, 6 critical)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;남은 &lt;strong&gt;39개&lt;/strong&gt;의 취약점은 사용하고 있는 패키지로부터 발생하고 있었습니다.&lt;/p&gt;
+&lt;h2 id=&quot;npm-audit-production으로-다시-검사&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#npm-audit-production%EC%9C%BC%EB%A1%9C-%EB%8B%A4%EC%8B%9C-%EA%B2%80%EC%82%AC&quot; aria-label=&quot;npm audit production으로 다시 검사 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;npm audit —production으로 다시 검사&lt;/h2&gt;
+&lt;p&gt;위의 39개의 취약점을 모두 수정해야할 필요는 없었습니다. 확인해보니, &lt;code class=&quot;language-text&quot;&gt;devDependecies&lt;/code&gt;에 있는 항목들은 빌드 시에는 포함되지 않는 부분이므로 무시해도 괜찮습니다. npm v6 기준으로 &lt;code class=&quot;language-text&quot;&gt;npm audit&lt;/code&gt;을 할 경우 이 &lt;code class=&quot;language-text&quot;&gt;devDependencies&lt;/code&gt;까지 포함하여 검사를 하게 됩니다. 실제 빌드 시 사용되는 패키지들만 검사하고 싶다면 &lt;code class=&quot;language-text&quot;&gt;--production&lt;/code&gt;이라는 옵션을 주면 됩니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[root@root nq-view-vuetify]# npm audit --production
+                                                                                
+                       === npm audit security report ===                        
+                                                                                
+# Run  npm install marked@4.0.16  to resolve 2 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+┌───────────────┬──────────────────────────────────────────────────────────────┐
+│ High          │ Inefficient Regular Expression Complexity in marked          │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Package       │ marked                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Dependency of │ marked                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Path          │ marked                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ More info     │ https://github.com/advisories/GHSA-5v2h-r2cx-5xgj            │
+└───────────────┴──────────────────────────────────────────────────────────────┘
+
+
+┌───────────────┬──────────────────────────────────────────────────────────────┐
+│ High          │ Inefficient Regular Expression Complexity in marked          │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Package       │ marked                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Dependency of │ marked                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ Path          │ marked                                                       │
+├───────────────┼──────────────────────────────────────────────────────────────┤
+│ More info     │ https://github.com/advisories/GHSA-rrrm-qjm4-v8hf            │
+└───────────────┴──────────────────────────────────────────────────────────────┘
+
+
+found 2 high severity vulnerabilities in 73 scanned packages
+  2 vulnerabilities require semver-major dependency updates.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;npm audit --production&lt;/code&gt; 결과는 위와 같습니다. &lt;strong&gt;단 2개&lt;/strong&gt;의 &lt;code class=&quot;language-text&quot;&gt;high&lt;/code&gt; 취약점이 발견되었으며, 해결하기 위해서는 &lt;code class=&quot;language-text&quot;&gt;marked&lt;/code&gt; 패키지를 &lt;code class=&quot;language-text&quot;&gt;4.0.16&lt;/code&gt;으로 업데이트해야한다고 친절하게 알려줍니다. 다만 업데이트를 하게되면 호환성이 깨질 수 있다고 경고하네요. (&lt;code class=&quot;language-text&quot;&gt;potentially breaking change&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;해당 패키지는 저희 솔루션의 “도움말” 부분에 마크다운 문서를 렌더링하기 위해 사용하고 있었으며, 경고대로 &lt;code class=&quot;language-text&quot;&gt;4.0.16&lt;/code&gt;으로 업데이트 후에 도움말이 나오지 않는 문제가 발생했습니다. 이는 해당 패키지 문서를 참고하여 바뀐 API대로 코드를 수정해야합니다.&lt;/p&gt;
+&lt;p&gt;코드를 수정하여 해결하였으며 최종 &lt;code class=&quot;language-text&quot;&gt;npm audit --production&lt;/code&gt;의 결과는 아래처럼 나옵니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[root@root nq-view-vuetify]# npm audit --production
+                                                                                
+                       === npm audit security report ===                        
+                                                                                
+found 0 vulnerabilities
+ in 73 scanned packages&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[개발자도구 접근 차단하기]]></title><description><![CDATA[…]]></description><link>https://guest-01.github.io/TIL/atWork/disable-devtool/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/disable-devtool/</guid><pubDate>Fri, 13 May 2022 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;오늘도 보안기능확인서 신청을 위해 들어온 요구사항 중 하나를 해결하고 기록하였습니다.&lt;/p&gt;
+&lt;p&gt;원래의 요구사항은 사용자의 비밀번호가 어디에도 평문으로 남아서는 안된다는 지적이었으며, 구체적으로는 프론트엔드에서 로그인을 할 때 개발자도구를 열면 사용자가 입력한 암호가 보인다는 것이었습니다.&lt;/p&gt;
+&lt;p&gt;비밀번호를 해싱해서 보내는 해결방법도 있었지만, 개발자도구 특성상 어디에 언제 무엇이 발견될지 모르는터라 시한폭탄과도 같다고 판단하여 아예 접근을 차단해달라는 요청을 받았습니다.&lt;/p&gt;
+&lt;h2 id=&quot;레퍼런스-확인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;레퍼런스 확인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;레퍼런스 확인&lt;/h2&gt;
+&lt;p&gt;우선 개발자도구 차단이 가능한지 레퍼런스를 찾아보았습니다. 저희 이사님(개발팀장/백엔드)께서는 신한카드 홈페이지를 예로 드시면서 여기 홈페이지는 개발자도구가 안열린다고 이렇게 해달라고 하셨습니다. &lt;strong&gt;하지만 제가 확인해보니 개발자 도구를 여는 단축키(F12, Ctrl+Shift+I)를 막은 것이지 개발자도구를 막은 것이 아니라서, 브라우저 메뉴를 클릭해 개발자 도구를 열면 그냥 열려버렸습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 31.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABsElEQVQY0yWRzUsUcRjH59Df4cmSLh6CPAVdvHSI8NIpOuTJLlIUG5ELumCHWi2VkA3CVZNdyVxHYSMVLGatVnql6KBeRBZ2t5nGmZ3Z37x+/I0+8PB9Ds/z8Hm+j3Jkx8R+CJEPvoDAJ/IEjusiXAffaeE5Uttt2RMQS63rTRpmE8PSMVoGZsvESvo8D2WhrJFRPzK6usXI2w3SMp+urKN9+sIbbYfpD1VyO7/I//hN6v02E9o3dL1BU69j2xaOcBASJIoi4jhG6U2Pc/7BOGfvZzl37wmdqSw9dzO8q1Sp6SZ/Dmpofw8pbu3RPfmartFpRMviv2EQegGhvC4MwpOFSSrXn+W5+XyOwRcL3JDal83TMTzF4s9danWX3UOTyvcaM2v7DJXWeVlYxm3bGEeGtEDalZCFp3RJKJfvZEj1D1JaLFCcm2d2ZpYrEznGtj9T3twkr64xr65S+Vrl2tIGfYUywrL512zgSHVtm3binytOiJWLt3Pc6p9k4LHKQGaF9FiZq8PLdD5c4kK6RM+ISvdQSdYqZx694lKuKB/jE8hhVz7OEx5RKE9OKCXxMRbvjA2Imuf9AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;신한카드-홈페이지-개발자도구&quot;
+        title=&quot;신한카드-홈페이지-개발자도구&quot;
+        src=&quot;/TIL/static/e31776fe452bd8260d183f517f8454b0/c1b63/card-devtool-open.png&quot;
+        srcset=&quot;/TIL/static/e31776fe452bd8260d183f517f8454b0/5a46d/card-devtool-open.png 300w,
+/TIL/static/e31776fe452bd8260d183f517f8454b0/0a47e/card-devtool-open.png 600w,
+/TIL/static/e31776fe452bd8260d183f517f8454b0/c1b63/card-devtool-open.png 1200w,
+/TIL/static/e31776fe452bd8260d183f517f8454b0/ed123/card-devtool-open.png 1765w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이 외에 어떤 사이트를 찾아봐도 개발자 도구를 완벽히 막는 사이트는 없어보였습니다. 레퍼런스 찾기는 둘째치고, 생각을 조금 해보면 프론트엔드 개발자가 통제할 수 있는 것은 Web API 외에는 없기 때문에 API 목록을 확인해보았으나 따로 개발자도구 관련 API는 공개된 것이 없었습니다. 즉, 프론트엔드 스크립트로 브라우저 개발자 도구에 직접적으로 관여하는 것은 &lt;strong&gt;불가능&lt;/strong&gt;해보였습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 780px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 91.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACIUlEQVQ4y61TaY/aMBDN//91/UIBiUWChVBI4jt2Tl5nxhxFXe1WbSM92Z7Lb944RVVdsNlsUJal4Fge8S9fEWOEDwHOezjnENsWdd1AK01Q0MagaRo0imxai0/Rvq4rQi02YzRUo9BSbsHB7FDkaMioqAjbFBckGxfkVWkqTjDGSgzv73mGc+ki7wOKruvwP7+CaVprEahtXr3LrTubmRhiyNBG5z3ZzS9756zsU0q5YAieqHoxMmXRkXSd5xnTNMn6J7her7ngdvuGxWKB9XqF1WqN5fI79vv9X7XLRQumygxDm9nlNhysTFfJ+R78FYShDIUPYnji+nL+mtmjILPrhgnDOKMndAOtdOZCbBvENglS/9S0v8UP4/Ta8kjCH5sWhybipBJOOkK7lrwzapvwXkdB7Xo5c0cx9dhXLfZkP1QOvu0xTDeGwzCKc0c4UMBFhdwm3XYxkXwRoRtfWmRWOgxQBF75Mu5MCjJ9FwfYG9p+uvNHpEIujb8N5dMp85v7wPOp8B/ZH0MZBqbcobKdrEw/D/gKR9qcTYdpfi3Uk0yN70mSToaF+3uQoYwjShVlKMcmip5J9LhCuSTCczKf5zlrm7qecpLE8iBr09IMbxry73U2SQJ4mqwjM2RtTejkEr7srJMwGqdZGP7QOedIqJSn+My0YJocvNgZLHcaq3eL7clhdwkiw7c3RTb6v/vne+OiHLMpHdYHC+vjQ8+fCod4ZMffmyAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;브라우저-API-목록&quot;
+        title=&quot;브라우저-API-목록&quot;
+        src=&quot;/TIL/static/1ac67bba02f2f987e250249c238d4b47/a1792/web-api-list.png&quot;
+        srcset=&quot;/TIL/static/1ac67bba02f2f987e250249c238d4b47/5a46d/web-api-list.png 300w,
+/TIL/static/1ac67bba02f2f987e250249c238d4b47/0a47e/web-api-list.png 600w,
+/TIL/static/1ac67bba02f2f987e250249c238d4b47/a1792/web-api-list.png 780w&quot;
+        sizes=&quot;(max-width: 780px) 100vw, 780px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API&quot;&gt;MDN의 Web API 목록&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;관련-npm-패키지&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B4%80%EB%A0%A8-npm-%ED%8C%A8%ED%82%A4%EC%A7%80&quot; aria-label=&quot;관련 npm 패키지 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;관련 npm 패키지&lt;/h2&gt;
+&lt;p&gt;그래도 없는게 없다는 npm에 혹시 관련 라이브러리가 있을까 싶어 찾아보니 아래와 같은 패키지가 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 903px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABsElEQVQoz6WSbW/aMBDH8/2/R6WtnapK2wRNWwKBMgZ0jFGkqus0VUgdsRNIgm0gcfyvHUJIq/VVT/rpzg/34PNZ2+0WyzBEGEbIMlUhw17Mumq/hdQ+lpQSSZLkKKVKjLA4RBQuc3stODhn2lIv7lUxRVh756rsK+qOHlC/ukavf4Mv5w7sSwe394/52Us/Ve5ZmTos8tLVrnRzqf8gUB88wR7McNKeaf2IH3+iImmmffbsYmTVgO8XVQQsmj/9NcYnd4Sr3gi1zg3chgvS+4rfLRu1iyZm048g9ydouy3EjTOgeYqJ6+BufAxGOmXVZQ+ntxOcN77h+9iD2+qiNu6iOezAtes4ur5DfTiB41zgw+AvnGYbLbuGiV5f9j/jJx0eAgoh4M3n8H0fgSFYaHwQSjD3PBCiNaH451FQGsDTbPRESNNvPSGm37Loo/kDi4kNnmiERSgQhAx0yTUMvoYEK5AFxzLS+5TmyUwCxljxkSh1GTCRCnwjsVpL8HWKiGtYgpXY2SFLITYpGOdYMQPTtkBq5jeVSNODzp9sBjp/os4cx3Flrl7z6k//O9gKz/0vRpGSvuBgAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;라이브러리-readme.md&quot;
+        title=&quot;라이브러리-readme.md&quot;
+        src=&quot;/TIL/static/895fae9225425ab3b5ddab58cbf5ba2e/c4b7c/disable-devtool-readme.png&quot;
+        srcset=&quot;/TIL/static/895fae9225425ab3b5ddab58cbf5ba2e/5a46d/disable-devtool-readme.png 300w,
+/TIL/static/895fae9225425ab3b5ddab58cbf5ba2e/0a47e/disable-devtool-readme.png 600w,
+/TIL/static/895fae9225425ab3b5ddab58cbf5ba2e/c4b7c/disable-devtool-readme.png 903w&quot;
+        sizes=&quot;(max-width: 903px) 100vw, 903px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/theajack/disable-devtool&quot;&gt;https://github.com/theajack/disable-devtool&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;해당 도구의 설명을 보면 스크립트 태크를 이용해서 간단하게 삽입할 수 있고, 개발자도구 단축키를 막아주며, 브라우저 메뉴바에 직접 클릭을 통해 열면 바로 창이 닫히도록 개발해놓았다고 합니다.&lt;/p&gt;
+&lt;p&gt;간단하게 html을 만들어서 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;script&gt;&lt;/code&gt; 태그로 삽입해보았고 아래와 같이 브라우저 메뉴를 통해 개발자도구를 열면 순식간에 창이 닫혀버리는 것을 볼 수 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/TIL/c9731e7ad28cb6910bcf2e221c5a8ade/disable-devtool-action.gif&quot; alt=&quot;개발자도구를-열어서-닫히는-gif&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;분석-및-결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B6%84%EC%84%9D-%EB%B0%8F-%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;분석 및 결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;분석 및 결론&lt;/h2&gt;
+&lt;p&gt;우선 Web API 중에는 개발자 도구 관련 API가 없으므로 공식적으로 개발자 도구를 차단하는 방법은 없습니다.&lt;/p&gt;
+&lt;p&gt;하지만 관련 npm 패키지들이 구현한 방식을 보면, 윈도우 사이즈나 디버거 등을 이용해서 우회적으로 개발자 도구가 열린 것을 감지해내는 것 같습니다. 이로 인해 개발자 도구가 열리는 것을 막을 수는 없지만 열리는 것을 감지해서 창을 닫아버린다던지 하는 조치를 취할 수는 있었습니다.&lt;/p&gt;
+&lt;p&gt;이가 없으면 잇몸으로 한다는 말이 와닿는 사례였습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Quick Start]]></title><description><![CDATA[Getting Started 😎 1. Create a Gatsby site. If you are not using , following Gatsby Getting Started 2. Start developing. 3. Add your content…]]></description><link>https://guest-01.github.io/TIL/development/quick_start/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/development/quick_start/</guid><pubDate>Sun, 05 Jul 2020 17:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;getting-started-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#getting-started-&quot; aria-label=&quot;getting started  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting Started 😎&lt;/h1&gt;
 &lt;h2 id=&quot;1-create-a-gatsby-site&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-create-a-gatsby-site&quot; aria-label=&quot;1 create a gatsby site permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Create a Gatsby site.&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# create a new Gatsby site using the blog starter
 $ npx gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
