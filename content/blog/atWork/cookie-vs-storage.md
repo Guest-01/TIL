@@ -3,7 +3,7 @@ title: 'access token은 어디에 저장하는 것이 좋을까'
 date: 2022-12-21 22:12:01
 category: atWork
 # thumbnail: { thumbnailSrc }
-draft: false
+draft: true
 ---
 
 우리 회사는 자체 솔루션을 개발하여 판매하고 있기도 하지만, 해외 유수 보안 솔루션의 벤더사로써도 영업하고 있습니다.
