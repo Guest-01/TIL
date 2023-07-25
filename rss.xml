@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 13 Feb 2023 12:56:47 GMT</lastBuildDate><item><title><![CDATA[Elastic Search 검색 속도 개선하기]]></title><description><![CDATA[저희 회사의 IDS 솔루션은 탐지로그를 엘라스틱 서치에 저장하고 있습니다. 그리고 프론트엔드에서 직접 DSL…]]></description><link>https://guest-01.github.io/TIL/atWork/event-search-improvement/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/event-search-improvement/</guid><pubDate>Sat, 11 Feb 2023 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;저희 회사의 IDS 솔루션은 탐지로그를 엘라스틱 서치에 저장하고 있습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 25 Jul 2023 16:45:21 GMT</lastBuildDate><item><title><![CDATA[테이블 셀 안의 내용이 너무 길 때]]></title><description><![CDATA[마주친 문제 백오피스 개발을 하다보면 테이블 형태의 UI…]]></description><link>https://guest-01.github.io/TIL/atWork/overflow-in-table/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/overflow-in-table/</guid><pubDate>Mon, 12 Jun 2023 22:12:01 GMT</pubDate><content:encoded>&lt;h3 id=&quot;마주친-문제&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EC%A3%BC%EC%B9%9C-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;마주친 문제 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;마주친 문제&lt;/h3&gt;
+&lt;p&gt;백오피스 개발을 하다보면 테이블 형태의 UI를 많이 쓰곤 합니다. 이때 컬럼(필드)의 종류가 많거나 아니면 단순히 한 필드의 내용 자체가 길어서 두줄로 넘어가거나, 보기 싫을 정도로 큰 비율을 차지하고 있는 경우가 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 966px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABE0lEQVQoz21R2W6EMAzk/z8MHnnavm+7UEJIucIRrqnHC5WQGsmaxLFnxkmEc+37/hfbtmnOe484jvF4fCBNUyRJgq/XS++O48B/KzLG4LsoME0T1nVFWIJi13Uwkuf+EjqOHW3bIssylGWJPM/B/uxCyUdsHMcRzlVwldOoJNiQ5RmsIIuttZKvVGiQ+p44DOj7/obRPM9qlWqfz+dbTUhIUJhCiI06JWlTNwhSz2FDCDq24nnWkflOPFCdJM45dcygIu97L+rjgFnqeKYJL7k3+htGw+CxrIu6MXQjUYgjjktyjtK0jZIuy6IiNMC+cApcyHt9Q25sZVEaGbW06rT+qW8/z+AHUYBO2DedSEJ+FvEXMicY8TutpyMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;overflowed&quot;
+        title=&quot;overflowed&quot;
+        src=&quot;/TIL/static/9ce8db5ca197cbf595bd06596d36113e/5bf79/overflow-in-table-1.png&quot;
+        srcset=&quot;/TIL/static/9ce8db5ca197cbf595bd06596d36113e/5a46d/overflow-in-table-1.png 300w,
+/TIL/static/9ce8db5ca197cbf595bd06596d36113e/0a47e/overflow-in-table-1.png 600w,
+/TIL/static/9ce8db5ca197cbf595bd06596d36113e/5bf79/overflow-in-table-1.png 966w&quot;
+        sizes=&quot;(max-width: 966px) 100vw, 966px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;위 그림에서 보듯, &lt;code class=&quot;language-text&quot;&gt;column2&lt;/code&gt;의 내용이 각 행마다 4줄, 2줄, 1줄로 다르게 나오는 것이 통일감을 해치는 느낌이 있습니다.&lt;/p&gt;
+&lt;h3 id=&quot;해결-방법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;해결 방법 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;해결 방법&lt;/h3&gt;
+&lt;p&gt;그럼 해결 방법은 간단합니다. 셀 안의 내용이 길어져서 특정 너비에 도달하는 경우에는 두 줄로 넘기지 않고 &lt;code class=&quot;language-text&quot;&gt;truncate&lt;/code&gt;하는 것입니다. CSS를 이용하면 이런 작업을 간단하게 구현할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;td&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 500px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;text-overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ellipsis&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 해주면 &lt;code class=&quot;language-text&quot;&gt;td&lt;/code&gt; 태그의 길이가 500px을 넘어가면 말줄임표(”…“) 처리를 해줍니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 991px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA0UlEQVQY021QSRKDMAzj//+iJw70xg+AQBKSsG+q5XY6PTQzGnmXnQyfd13XF+d5amxMCXn+QFVVeJYliqKA915z933j38uMMSCWZcG+79i2DcdxIMaItm3VvkSAIhRjvK5rmK4TbtBJb9M0WktkfhgwTROstRjE5gZk5x06abLOwQkY98LMJdmc/jiOwuILs2aeZ2RRkuu6ou97afDCVpMUYEwvkMGmfV8SwqD1IQRlbszr6PNCHUiDxRzArQiq81zmfpE+C0QZwO+JMX0FWP8C3g5/GWUS6ekAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;overflowed-solved&quot;
+        title=&quot;overflowed-solved&quot;
+        src=&quot;/TIL/static/b46ea73456364a1780a5dfcd2ce92b75/1b19f/overflow-in-table-2.png&quot;
+        srcset=&quot;/TIL/static/b46ea73456364a1780a5dfcd2ce92b75/5a46d/overflow-in-table-2.png 300w,
+/TIL/static/b46ea73456364a1780a5dfcd2ce92b75/0a47e/overflow-in-table-2.png 600w,
+/TIL/static/b46ea73456364a1780a5dfcd2ce92b75/1b19f/overflow-in-table-2.png 991w&quot;
+        sizes=&quot;(max-width: 991px) 100vw, 991px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;보기 좋게 모두 같은 높이로 맞춰졌습니다.&lt;/p&gt;
+&lt;p&gt;그런데 그럼 원래 내용을 모두 보고싶으면 어떻게 해야할까요? 두가지 방법이 있습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;:hover&lt;/code&gt; 의사 클래스(선택자) 활용&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;title&lt;/code&gt; HTML 속성값 활용&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;먼저 &lt;code class=&quot;language-text&quot;&gt;:hover&lt;/code&gt; 선택자를 활용하는 방법은 단순히 마우스를 올렸을 때 위의 CSS 설정을 다시 초기화 해주는 방법입니다. 이때 다른 건 건들 필요 없고, &lt;code class=&quot;language-text&quot;&gt;white-space&lt;/code&gt; 값만 초기값인 &lt;code class=&quot;language-text&quot;&gt;normal&lt;/code&gt;로 바꿔주면 마우스를 올렸을 때 잠깐 기존처럼 모든 내용이 나타납니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;td:hover&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; normal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(마우스를 올리면 맨 처음 스크린샷과 같이 나오기 때문에 따로 스크린샷을 찍지 않았습니다)&lt;/p&gt;
+&lt;p&gt;그리고 두번째 방법은 거의 대부분의 HTML 태그에 존재하는 &lt;code class=&quot;language-text&quot;&gt;title&lt;/code&gt; 속성을 이용하는 것입니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML &lt;code class=&quot;language-text&quot;&gt;title&lt;/code&gt; property (&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title&quot;&gt;MDN 링크&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;title&lt;/code&gt; 속성에 원래 내용을 넣어주면 마우스를 올렸을 때 툴팁으로 내용을 표시해줍니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1027px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 26%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAyElEQVQY031QWw6DMAzj/pfbJvjiABt9U17lKa8OY9J+VslqmsR20gKfcxzHF/u+S05rjdv9gbquUZYlqqrCtm34dwrvnRDneca6rgIKxhgln1LCNE0fJDhroZSCMUbAHptzr+cTKWsUJI7jCO89QtvmooFzDkorNE0jzdZZIYYQpHaBHIIx+6hTDMOAZVnOBueFaIwWd06iVJOFX7lu0WbDrut+0PfnHbuY4/4U5LriSsfgZRKuyPVpRlzfQRInIa6voAbfrL8BxoN+sNmZG5sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;overflowed-title&quot;
+        title=&quot;overflowed-title&quot;
+        src=&quot;/TIL/static/b145953523b77d9ce62b2d44f3c41ef0/f2d92/overflow-in-table-3.png&quot;
+        srcset=&quot;/TIL/static/b145953523b77d9ce62b2d44f3c41ef0/5a46d/overflow-in-table-3.png 300w,
+/TIL/static/b145953523b77d9ce62b2d44f3c41ef0/0a47e/overflow-in-table-3.png 600w,
+/TIL/static/b145953523b77d9ce62b2d44f3c41ef0/f2d92/overflow-in-table-3.png 1027w&quot;
+        sizes=&quot;(max-width: 1027px) 100vw, 1027px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Elastic Search 검색 속도 개선하기]]></title><description><![CDATA[저희 회사의 IDS 솔루션은 탐지로그를 엘라스틱 서치에 저장하고 있습니다. 그리고 프론트엔드에서 직접 DSL…]]></description><link>https://guest-01.github.io/TIL/atWork/event-search-improvement/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/event-search-improvement/</guid><pubDate>Sat, 11 Feb 2023 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;저희 회사의 IDS 솔루션은 탐지로그를 엘라스틱 서치에 저장하고 있습니다.&lt;/p&gt;
 &lt;p&gt;그리고 프론트엔드에서 직접 DSL 쿼리를 통해 가져와 보여주고 있습니다.&lt;/p&gt;
 &lt;p&gt;최근 고객사로부터 로그량이 많은 경우 페이지 로딩이 지나치게 길다는 불편사항을 접수 받았습니다. 확인해보니 특정 기간동안 로그량이 1억 7천만건이나 되었고 &lt;code class=&quot;language-text&quot;&gt;size&lt;/code&gt; 쿼리문을 통해 1000건만 가져오도록 했음에도 거의 30~40초 가량의 시간이 걸리는 것을 확인했습니다.&lt;/p&gt;
 &lt;blockquote&gt;
