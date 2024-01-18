@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 09 Dec 2023 06:04:07 GMT</lastBuildDate><item><title><![CDATA[인터넷이 없는 폐쇄망에서 아이콘이 안나오는 문제]]></title><description><![CDATA[…]]></description><link>https://guest-01.github.io/TIL/atWork/include-icon-offline/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/include-icon-offline/</guid><pubDate>Mon, 20 Nov 2023 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;오늘은 회사에서 사용자 이슈를 해결한 사례를 가지고 왔습니다. 프론트엔드 개발자는 일반적으로 인터넷 연결이 되는 클라이언트를 가정하고 개발을 하는 경우가 많기에 특이한 사례라고 생각되어서 공유차 기록하게 되었습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Today I Learned...]]></title><description><![CDATA[This is my TIL blog site.]]></description><link>https://guest-01.github.io/TIL</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 18 Jan 2024 09:26:58 GMT</lastBuildDate><item><title><![CDATA[Electron에서 window.alert 함수 사용시 문제해결]]></title><description><![CDATA[는 웹페이지에서 얼럿을 발생시킬 때 종종 사용하는 내장 함수입니다. 다만 이 함수는 Main Thread를 Block하기 때문에, 얼럿이 떠있는 동안 뒤의 UI가 멈추는 것이 기본 스펙입니다. Electron…]]></description><link>https://guest-01.github.io/TIL/atWork/electron-alert-input/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/electron-alert-input/</guid><pubDate>Wed, 17 Jan 2024 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;window.alert&lt;/code&gt;는 웹페이지에서 얼럿을 발생시킬 때 종종 사용하는 내장 함수입니다. 다만 이 함수는 Main Thread를 Block하기 때문에, 얼럿이 떠있는 동안 뒤의 UI가 멈추는 것이 기본 스펙입니다.&lt;/p&gt;
+&lt;p&gt;Electron에서는 이 동작이 예기치 못한 오류를 일으켜서, alert이 종료된 이후에도 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;input&gt;&lt;/code&gt; 칸에 커서(focus)가 생기지 않아 입력이 되지 않는 문제가 있습니다.&lt;/p&gt;
+&lt;h3 id=&quot;실제-오류-케이스&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8B%A4%EC%A0%9C-%EC%98%A4%EB%A5%98-%EC%BC%80%EC%9D%B4%EC%8A%A4&quot; aria-label=&quot;실제 오류 케이스 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;실제 오류 케이스&lt;/h3&gt;
+&lt;p&gt;저희 솔루션에는 N사의 SSO를 이용해서 인증을 하는 단계가 있습니다. 이때, 2차 인증을 하게 되면 인증번호를 지정된 휴대폰 번호나 email로 발송하게 되고 몇시 몇분에 발송되었다는 alert이 뜨게 됩니다.&lt;/p&gt;
+&lt;p&gt;그런데 이 때 뜨는 alert를 확인을 눌러 닫고 나면, 그 뒤에 인증번호를 입력하는 칸에 포커스가 잡히지 않아 커서가 생기질 않습니다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;인증번호 발송 직후&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;input칸 입력 안됨&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 470px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 169%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAEOElEQVRIx+1VSU9bVxT2mgWrlAX7ZNlu2wrxWypl0aqACSmDCTaGRoxSESa0LDKIMSkCx05S2lSqWlVqGaQyFEwwTWMDtvGIn9+z3/OIv5xzH4aIOFXT0l2v9Ond8TvnO+ee+wzrPhUHRzkARRSOj1GuFYvl58s1w3XzTXxU3whj03Vca/oMDY1NqKs3oq6hEZ8aT1BnRH3DNbHWYGw6+xLqjfo87+8wd8Jw5b13cXtuBo5vF/DNkwU4Hz3G3Jwdc3aC04H5R07YHzpgt1Pf/rAMHJibt2Nyagbvf1ADwycfX0U+m0NG1RAOh5BMpZDWNKRo/DYtXyjg5udWGL4aHYKUSCCXyyGdTgtkCNlsFgXaxMjn82Ksg4xnMqdIE3g+nc5gZuoeDDabDQkiZO8Og0H4fT5IUoL6hwgc6giFgojTnKqmoGnaGxJXxPj4OBOOQFEUspSmAypSJFlYJouakK4Kr3d2drC2toqNjXVsbW3B5drC9va2gMvlQjwex/T0NAwjIzphJpeHqpHkTBYe7x68+/tERvJJYkJWUFtbi8rKSlRVVeHy5Suo+bAG1dXVuHTpHVRUVMDhcMDpdOqELDkaiyESiQr4/QH4/H5Eo/och2JsbAzd3d3o6enB4OAghodt6O3tFeOuri7h5ezsLEkmQlmWRWCjsShkRT6RrCFIcUwmk0Lyqy2by0JLa6/FcGJiQk8KE/JVCQUOKCGSiKWqqeRhBAoRclx5D4eG+0FKoD/gJ+MKkgRe43hPTk7qhLyRDMCnFkT5FQlMuri4CEVWhPVjmstRPBVSsLe3h93dXeE9XyOxRtfu1ENBSG4/l3MiCXzvOGt2qpZQKCzuIh9IEUGMvP7u6VNMUUYjkYjwjJ3InhFSlhMSoqFDHHg8OKLksIFkMiVik0olRdJelczxZgMq9Y+O4ogeBlDIaJhgyV/eGoEnHMPzmASNSDK0mdvx8ZtfGA6BwMl4PRDFsyMFX09PwXBndAQ/+WN48CICr2sT22439kWM3FhaWhJxLJdpJsyfGB1+IcHmkbFwnwjHRm/BE5exGZEg07WRErKQxyQ77h2qjA3RZ5Rqm8GJK3m4FIxjTUpj/j5VyhdDQ3Bt/o54JEzJKOiPAxc+ffkgSy89BJwAhijFgISf19z47c8w3H944XU/w+07d2Ho6+tDa1sbHFQ2q6urQuby8vIpeLyysvIaFn78FbOPv8eTH37B3akHaGlpAXMZuIwsFgtMJhOam5vFwt9Be1srOtpNuGFqxQ36ms1mnXBgYEAQcj2+DawMqw4eM4cg7O/vFwOr1YrOzs5/BD57SliS/J8Q/hv8T3iBhKV7eBFZ7u3t00vvojzUCS/wYvNfkDzsF3VYbtNf4fx+5hCE50uvZI0fizZ6hUxU+O3t7QJifDLfQQTnzwjJ5QhLFgUs5rO+ueO0b7F0liV8CRJNGDtDUIEaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;electron alert input 1&quot;
+        title=&quot;electron alert input 1&quot;
+        src=&quot;/TIL/static/1f58bce808b674563ba2e9d16f01d0f5/f96db/electron-alert-input-1.png&quot;
+        srcset=&quot;/TIL/static/1f58bce808b674563ba2e9d16f01d0f5/5a46d/electron-alert-input-1.png 300w,
+/TIL/static/1f58bce808b674563ba2e9d16f01d0f5/f96db/electron-alert-input-1.png 470w&quot;
+        sizes=&quot;(max-width: 470px) 100vw, 470px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 466px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 170.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACmklEQVRIx+2WTWsTQRjHFyqejOhBweCp1/Qm8eDJs2BBBE9+BC/Wokma0jbBIHgSX5LUpPRgVZSSfgLBi0Q0VRSDp9iktc3LbmJ2t9mX7ObvzGw25GVTQq2g0IFfZuaZef777DOzmeHefOPxPVdE6ecWCoUCBJ4Hzwv4VatBqPCokX5xpwhN1+FUdGKntFotGEYT3A1/CFP3IgiE7yISuQ//zDxuTvkw7QtiOjjLuHU7AF9gDjOzoQ6B4MIA1JdzeSdwJHwZ7mtXMHnpKrwXLsLj8cI94cHY+XEcPTeO46fOwnXiDI61cQ3jpBvcg0dxxBaTeBJL4uFj0o4n8TSxjPjiEqKxBOtHCTHSj7eh9iizJwbgcMCFk+VdmKZJEmr0QG0/cjmk02nkN/LIZrNYX8/gw8dMewEMRzhVVZkynWRj9U1UKhXU63XIksjapVIJRUL//G4cBW3RYWWY2J6Ce+Ekbrc7gvuNqHsOWxQqqGoaKuSLKJcrKJNcsTb5SnihCqFaQ12U0FBU7DYUNAi0VlUNJlkEmldJkmB2v7Km6cy51Ba0hYSqVYuSDIUIUFEbGgTdCTx5sCiKvTmkwRrkh9ZmPy061kKTOPdi2WwfwzStV1ZGyOGohUUIXUNqS8WdTyJCXyXMfxkkTOz22Fzf2AKx+z9LeLmhWBHC1HD9XR3c0ja450Vwz3Z6WSni9GoZ7lQZYy/a4ytd49RneRuTb2uWoKGpyFSbeJVXsLapIrWpDLBaUBztlDXCa+L7ntf/Ug7tVbZWbf8Y3Ru7e6f/8d/XoeCh4L8meBD8BxE2Gg3WoOeDzSjR9vvYDERIS7PZZDcGevhI5MSTZZmdbLatTtDb98X+hzsK0iex45WdiFoHRVE6dnqPcUrVb2Pc6qHRrB7nAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;electron alert input 2&quot;
+        title=&quot;electron alert input 2&quot;
+        src=&quot;/TIL/static/ab5e8838cd9c8750d79dfe1f515111ff/fc1a1/electron-alert-input-2.png&quot;
+        srcset=&quot;/TIL/static/ab5e8838cd9c8750d79dfe1f515111ff/5a46d/electron-alert-input-2.png 300w,
+/TIL/static/ab5e8838cd9c8750d79dfe1f515111ff/fc1a1/electron-alert-input-2.png 466w&quot;
+        sizes=&quot;(max-width: 466px) 100vw, 466px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;본문 초두에 요약해드렸듯이, 원인은 Electron과 window.alert 간의 충돌로 보입니다. 관련하여 StackOverflow와 Github Issue 글을 찾을 수 있었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/56805920/cant-edit-input-text-field-after-window-alert&quot;&gt;https://stackoverflow.com/questions/56805920/cant-edit-input-text-field-after-window-alert&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/issues/19977&quot;&gt;https://github.com/electron/electron/issues/19977&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Github Issue쪽을 보면 최초 발견 시점이 2019년도의 &lt;code class=&quot;language-text&quot;&gt;electron@5.0.10&lt;/code&gt; 버전인데, 불과 2주전인 &lt;code class=&quot;language-text&quot;&gt;28.1.1&lt;/code&gt; 버전까지도 증상이 지속되고 있는 것으로 보아, 개선이 불가한듯 합니다.&lt;/p&gt;
+&lt;p&gt;프레임워크의 내부 소스 수준에서 개선이 어렵다면 다른 Workaround를 찾아야할 것 같습니다.&lt;/p&gt;
+&lt;h3 id=&quot;임시-해결-방안&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%84%EC%8B%9C-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EC%95%88&quot; aria-label=&quot;임시 해결 방안 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;임시 해결 방안&lt;/h3&gt;
+&lt;p&gt;일단 &lt;code class=&quot;language-text&quot;&gt;alert&lt;/code&gt;을 사용하지 않으면 해결되는 문제이지만, N사의 SSO 페이지는 제가 관리하는 부분이 아니기 때문에 alert 대신 다른 함수를 쓰도록 변경할 수 없습니다.&lt;/p&gt;
+&lt;p&gt;그 대신, 해당 윈도우의 &lt;code class=&quot;language-text&quot;&gt;alert&lt;/code&gt; 함수를 덮어써버리는 방식으로 해결해보았습니다. (메소드 오버라이딩)&lt;/p&gt;
+&lt;p&gt;개발자 콘솔을 열어서 아래와 같이 덮어쓰면 얼럿이 뜨지 않게 됩니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 혹은&lt;/span&gt;
+window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 원하는대로 `msg`를 다른 방식으로 표현&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 예를 들어,&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;msg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;문제는 이 스크립트를 어떻게 실행시키느냐였습니다. 사용자에게 로그인 할 때마다 일일이 개발자도구를 열어서 타이핑하라고 할 순 없으니까요.&lt;/p&gt;
+&lt;p&gt;SSO 로그인 페이지는 Electron의 &lt;code class=&quot;language-text&quot;&gt;BrowserWindow&lt;/code&gt; 클래스를 통해 생성되고 있습니다. 이 &lt;code class=&quot;language-text&quot;&gt;BrowserWindow&lt;/code&gt; API 문서를 보면 뭔가 방법이 있을 것 같았고, 역시나 유용해보이는 메소드가 있었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.electronjs.org/docs/latest/api/web-contents#contentsexecutejavascriptcode-usergesture&quot;&gt;https://www.electronjs.org/docs/latest/api/web-contents#contentsexecutejavascriptcode-usergesture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;해당 메소드를 이용하면 특정 &lt;code class=&quot;language-text&quot;&gt;BrowserWindow&lt;/code&gt;에 Javascript를 실행시킬 수 있습니다. 이걸 이용해서 위의 &lt;code class=&quot;language-text&quot;&gt;window.alert&lt;/code&gt;를 덮어쓰는 코드를 실행시키면 얼럿이 뜨는 것을 방지할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; win &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;BrowserWindow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+win&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;webContents&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;executeJavaScript&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;window.alert = (msg) =&gt; return;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;참고로, 실행한 js의 결과값/에러값은 Promise 형태로 받아볼 수 있습니다. 위 예시처럼 굳이 받을 것이 없어도, 에러가 일어날 수 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;catch&lt;/code&gt;절은 추가해주는 것이 좋습니다.&lt;/p&gt;
+&lt;p&gt;만일 에러가 일어날 경우 에러객체가 Main 프로세스로 넘어오는데 이 때 Object를 Clone할 수 없다는 에러가 또 발생하기 때문입니다. (이는 에러 객체의 &lt;code class=&quot;language-text&quot;&gt;Symbol&lt;/code&gt;을 marshalling 할 수 없기 때문인데, 추후 별도의 포스트로 기회가 된다면 다루어 보겠습니다)&lt;/p&gt;
+&lt;p&gt;따라서 최종적으로는 아래와 같이 해주었습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;win&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;webContents
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;executeJavaScript&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;window.alert = (msg) =&gt; return;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다만 이렇게 하면 &lt;code class=&quot;language-text&quot;&gt;alert&lt;/code&gt;이 무시되기 때문에, 사용자에게 필요한 정보가 누락될 수 있습니다. 가능하면 그냥 &lt;code class=&quot;language-text&quot;&gt;return&lt;/code&gt;하는 것이 아니라 다른 방법으로 해당 메시지를 표시해주는 것이 좋습니다. 어떤 UI로 대체할 것인가부터는 본 글의 요지에서 벗어나기 때문에 여기까지 하겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[인터넷이 없는 폐쇄망에서 아이콘이 안나오는 문제]]></title><description><![CDATA[…]]></description><link>https://guest-01.github.io/TIL/atWork/include-icon-offline/</link><guid isPermaLink="false">https://guest-01.github.io/TIL/atWork/include-icon-offline/</guid><pubDate>Mon, 20 Nov 2023 22:12:01 GMT</pubDate><content:encoded>&lt;p&gt;오늘은 회사에서 사용자 이슈를 해결한 사례를 가지고 왔습니다. 프론트엔드 개발자는 일반적으로 인터넷 연결이 되는 클라이언트를 가정하고 개발을 하는 경우가 많기에 특이한 사례라고 생각되어서 공유차 기록하게 되었습니다.&lt;/p&gt;
 &lt;h3 id=&quot;문제-상황&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EC%83%81%ED%99%A9&quot; aria-label=&quot;문제 상황 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;문제 상황&lt;/h3&gt;
 &lt;p&gt;인터넷이 안되는 폐쇄망 환경에서 우리 애플리케이션(&lt;code class=&quot;language-text&quot;&gt;electron&lt;/code&gt;으로 만든 데스크톱 앱)을 실행하면 아이콘이 있어야할 자리에 아무것도 보이지 않는 현상이 나타났습니다.&lt;/p&gt;
 &lt;p&gt;&lt;span
